@@ -8,9 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher"
   },
-  "author": "",
+  "author": {
+    "name": "Mircea Alexandru",
+    "email": "mircea.alexandru@gmail.com",
+    "url": "https://github.com/mirceaalexandru"
+  },
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
