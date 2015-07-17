@@ -1,0 +1,20 @@
+{
+  "name": "seneca-auth-urlmatcher",
+  "version": "0.0.1",
+  "description": "Seneca plugin for url matcher",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "gex": "~0.2.0",
+    "lodash": "~3.10.0"
+  }
+}
