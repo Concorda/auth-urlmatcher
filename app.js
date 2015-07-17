@@ -13,8 +13,14 @@ module.exports = function ( options ) {
     var checks = []
 
     _.each(spec,function(path){
-      if( _.isFunction(path) ) return cb(null, checks.push(path));
-      if( _.isRegExp(path) ) return cb(null, checks.push( function(req) { return path.test(req.url) } ));
+      if( _.isFunction(path) ) {
+        checks.push(path)
+        return cb(null, checks);
+      }
+      if( _.isRegExp(path) ) {
+        checks.push( function(req) { return path.test(req.url) } )
+        return cb(null, checks);
+      }
       if( !_.isString(path) ) return cb();
 
       path = ~path.indexOf(':') ? path : 'prefix:'+path
