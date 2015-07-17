@@ -13,9 +13,11 @@
   "files": [
     "LICENSE.txt",
     "README.md",
-    "app.js",
-    "default-options.js"
+    "app.js"
   ],
+  "bugs": {
+    "url": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher/issues"
+  },
   "author": {
     "name": "Mircea Alexandru",
     "email": "mircea.alexandru@gmail.com",
