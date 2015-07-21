@@ -10,6 +10,11 @@
     "type": "git",
     "url": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher"
   },
+  "keywords": [
+    "seneca",
+    "auth",
+    "plugin"
+  ],
   "files": [
     "LICENSE.txt",
     "README.md",
@@ -28,5 +33,6 @@
   "dependencies": {
     "gex": "~0.2.0",
     "lodash": "~3.10.0"
-  }
+  },
+  "homepage": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher"
 }
