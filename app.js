@@ -1,64 +1,67 @@
 "use strict";
+
+
+// external modules
 var _ = require('lodash')
 var gex = require('gex')
 
 
-module.exports = function ( options ) {
-  var seneca = this
-  var plugin = 'seneca-auth-urlmatcher'
+module.exports = function ( seneca, options ) {
 
-  function urlmatcher( args, cb ) {
+
+  function urlmatcher( args, done ) {
+
     var spec = args.spec
-    spec = _.isArray(spec) ? spec : [spec]
+    spec = _.isArray( spec ) ? spec : [ spec ]
     var checks = []
 
-    _.each(spec,function(path){
-      if( _.isFunction(path) ) {
-        checks.push(path)
-        return cb(null, checks);
-      }
-      if( _.isRegExp(path) ) {
-        checks.push( function(req) { return path.test(req.url) } )
-        return cb(null, checks);
-      }
-      if( !_.isString(path) ) return cb();
+    _.each( spec, function( path ) {
 
-      path = ~path.indexOf(':') ? path : 'prefix:'+path
-      var parts = path.split(':')
+      if(  _.isFunction( path ) ) {
+        checks.push( path )
+        return done( null, checks );
+      }
+
+      if( _.isRegExp( path ) ) {
+        checks.push( function( req ) { return path.test( req.url ) } )
+        return done( null, checks );
+      }
+      if( !_.isString( path ) ) return done();
+
+      path = ~path.indexOf( ':' ) ? path : 'prefix:' + path
+      var parts = path.split( ':' )
       var kind  = parts[0]
-      var spec  = parts.slice(1)
+      var spec  = parts.slice( 1 )
 
       function regex() {
         var pat = spec, mod = '', re
         var m = /^\/(.*)\/([^\/]*)$/.exec(spec)
-        if(m) {
+        if( m ) {
           pat = m[1]
           mod = m[2]
-          re = new RegExp(pat,mod)
-          return function(req){return re.test(req.url)}
+          re = new RegExp( pat, mod )
+          return function( req ){
+            return re.test( req.url )
+          }
         }
-        else return function(){return false};
+        else return function(){ return false };
       }
 
       var pass = {
-        prefix:   function(req) { return gex(spec+'*').on(req.url) },
-        suffix:   function(req) { return gex('*'+spec).on(req.url) },
-        contains: function(req) { return gex('*'+spec+'*').on(req.url) },
-        gex:      function(req) { return gex(spec).on(req.url) },
-        exact:    function(req) { return spec === req.url },
+        prefix:   function( req ) { return gex( spec + '*' ).on( req.url ) },
+        suffix:   function( req ) { return gex( '*' + spec ).on( req.url ) },
+        contains: function( req ) { return gex( '*' + spec + '*' ).on( req.url ) },
+        gex:      function( req ) { return gex (spec ).on( req.url ) },
+        exact:    function( req ) { return spec === req.url },
         regex:    regex()
       }
       pass.re = pass.regexp = pass.regex
-      checks.push(pass[kind])
+      checks.push( pass[kind] )
     })
 
-    return cb(null, checks)
+    return done( null, checks )
   }
 
 
-  seneca.add({role: 'auth', cmd: 'urlmatcher'}, urlmatcher)
-
-  return {
-    name:plugin
-  }
+  seneca.add( {role: 'auth', cmd: 'urlmatcher'}, urlmatcher )
 }

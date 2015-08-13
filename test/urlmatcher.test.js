@@ -7,7 +7,6 @@ var lab = exports.lab = Lab.script()
 var suite = lab.suite;
 var test = lab.test;
 var before = lab.before;
-var after = lab.after;
 
 var util = require('./util.js')
 

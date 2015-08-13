@@ -1,14 +1,14 @@
 {
-  "name": "seneca-auth-urlmatcher",
-  "version": "0.0.2",
-  "description": "Seneca plugin for url matcher",
+  "name": "auth-urlmatcher",
+  "version": "0.0.1",
+  "description": "Seneca internal module for url matcher",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher"
+    "url": "https://github.com/mirceaalexandru/auth-urlmatcher"
   },
   "keywords": [
     "seneca",
@@ -21,7 +21,7 @@
     "app.js"
   ],
   "bugs": {
-    "url": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher/issues"
+    "url": "https://github.com/mirceaalexandru/auth-urlmatcher/issues"
   },
   "author": {
     "name": "Mircea Alexandru",
@@ -34,5 +34,5 @@
     "gex": "~0.2.0",
     "lodash": "~3.10.0"
   },
-  "homepage": "https://github.com/mirceaalexandru/seneca-auth-urlmatcher"
+  "homepage": "https://github.com/mirceaalexandru/auth-urlmatcher"
 }
