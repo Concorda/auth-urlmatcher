@@ -7,7 +7,7 @@ var gex = require( 'gex' )
 
 
 module.exports = function ( options ) {
-  var seneca = options
+  var seneca = this
 
 
   function urlmatcher( args, done ) {
