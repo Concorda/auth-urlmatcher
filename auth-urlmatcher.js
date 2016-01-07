@@ -14,14 +14,15 @@ module.exports = function (options) {
     _.each(spec, function (path) {
       if (_.isFunction(path)) {
         checks.push(path)
-        return done(null, checks)
+        return
       }
 
       if (_.isRegExp(path)) {
         checks.push(function (req) {
           return path.test(req.url)
         })
-        return done(null, checks)
+
+        return
       }
       if (!_.isString(path)) return done()
 
