@@ -1,26 +1,21 @@
-"use strict";
-
-var assert = require('assert')
+'use strict'
 
 var Lab = require('lab')
 var lab = exports.lab = Lab.script()
-var suite = lab.suite;
-var test = lab.test;
-var before = lab.before;
+var suite = lab.suite
+var test = lab.test
+var before = lab.before
 
-var util = require('./util.js')
+var Util = require('./util.js')
 
-suite('register-login-logout suite tests ', function() {
-  before({}, function(done){
-    util.init(function(err, agentData){
-      done()
+suite('register-login-logout suite tests ', function () {
+  before({}, function (done) {
+    Util.init(function (err, agentData) {
+      done(err)
     })
   })
 
-  test('match test', function(done) {
+  test('match test', function (done) {
     done()
   })
 })
-
-
-
