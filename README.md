@@ -39,11 +39,11 @@ Copyright nearForm and other contributors 2015, Licensed under [MIT][].
 
 [npm-badge]: https://badge.fury.io/js/auth-urlmatcher.svg
 [npm-url]: https://badge.fury.io/js/auth-urlmatcher
-[david-badge]: https://david-dm.org/mirceaalexandru/auth-urlmatcher.svg
-[david-url]: https://david-dm.org/mirceaalexandru/auth-urlmatcher
+[david-badge]: https://david-dm.org/senecajs/auth-urlmatcher.svg
+[david-url]: https://david-dm.org/senecajs/auth-urlmatcher
 [gitter-badge]: https://badges.gitter.im/senecajs/seneca.png
 [gitter-url]: https://gitter.im/senecajs/seneca
-[travis-badge]: https://travis-ci.org/mirceaalexandru/auth-urlmatcher.svg
-[travis-url]: https://travis-ci.org/mirceaalexandru/auth-urlmatcher
+[travis-badge]: https://travis-ci.org/senecajs/auth-urlmatcher.svg
+[travis-url]: https://travis-ci.org/senecajs/auth-urlmatcher
 
 [MIT]: ./LICENSE
