@@ -1,6 +1,6 @@
 {
   "name": "auth-urlmatcher",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Seneca internal module for url matcher",
   "main": "auth-urlmatcher.js",
   "scripts": {
